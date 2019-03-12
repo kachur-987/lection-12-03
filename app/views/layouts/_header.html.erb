@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Our Cars</a>
+   
+    <ul class="navbar-nav ml-auto">
+<% if !user_signed_in? %>
+      <%= link_to user_session_path, class: "nav-link" do %>
+        <i class="fas fa-sign-in-alt"></i> Login
+      <% end %>
+<% else %>
+      <% if current_user.profile.nil? %>
+        <%= link_to new_profile_path, class: "nav-link" do %>
+          <i class="fas fa-user"></i> Profile
+        <% end %>
+      <% else %>
+          <%= link_to profile_index_path, class: "nav-link" do %>
+          <i class="fas fa-user"></i> Profile
+        <% end %>
+      <% end %>
+      <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
+        <i class="fas fa-sign-out-alt"></i> Logout
+      <% end %>
+<% end %>
+    </ul>
+</nav>
