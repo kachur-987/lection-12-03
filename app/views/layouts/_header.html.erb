@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Our Cars</a>
+    <%= link_to "Our Cars", root_path, class: "navbar-brand" %>
    
     <ul class="navbar-nav ml-auto">
 <% if !user_signed_in? %>
