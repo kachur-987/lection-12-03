@@ -1,7 +1,7 @@
 class PostsController < InheritedResources::Base
   before_action :authenticate_user!
   before_action :set_post, except: [:index, :create, :new]
-  
+    
   def new
     @post = Post.new
   end

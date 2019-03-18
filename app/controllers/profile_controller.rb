@@ -8,6 +8,13 @@ class ProfileController < ApplicationController
     @profile = Profile.new
   end
   
+  def edit
+    pp @profile = current_user.profile
+   respond_to do |format|
+      format.js
+    end
+  end
+  
   def create
     @profile = current_user.build_profile(profile_params)
     if @profile.save
