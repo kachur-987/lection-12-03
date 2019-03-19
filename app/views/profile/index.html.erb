@@ -4,5 +4,6 @@
 <p><%= current_user.profile.nickname %></p>
 <p><%= current_user.profile.country %></p>
 
-<p><%= link_to "Edit", edit_profile_path(current_user.profile.id), remote: true, data: { toggle: 'modal', 'target': '#edit-profile'} %>
+<p><%= link_to "Edit", edit_profile_path(current_user.profile.id), remote: true %></p>
+
 <div id="edit-profile"></div>
