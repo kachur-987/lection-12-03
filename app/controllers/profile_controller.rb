@@ -4,8 +4,30 @@ class ProfileController < ApplicationController
   def index
   end
   
+  def profile_info
+    @profile = current_user.profile
+    respond_to do |format|
+       format.js
+     end
+  end
+  
   def new
     @profile = Profile.new
+  end
+  
+  def edit
+    @profile = current_user.profile
+     respond_to do |format|
+       format.js
+     end
+  end
+  
+  def update
+    @profile = current_user.profile
+    @profile.update(profile_params)
+    if @profile.save
+      redirect_to profile_index_path
+    end
   end
   
   def create
