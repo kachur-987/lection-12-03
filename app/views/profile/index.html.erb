@@ -1,9 +1,8 @@
 <h1> Your Profile Info</h1>
 <p><%= image_tag(current_user.profile.avatar_url, size: "50x50", class:"rounded-circle") %></p>
 
-<p><%= current_user.profile.nickname %></p>
-<p><%= current_user.profile.country %></p>
+<p><%= link_to "More info", profile_info_path, remote: true %></p>
+<div id="info"></div>
 
 <p><%= link_to "Edit", edit_profile_path(current_user.profile.id), remote: true %></p>
-
 <div id="edit-profile"></div>
