@@ -1,0 +1,8 @@
+<% @photos.each do |photo| %>
+  Category: <%= photo.category.title %>
+  Title: <%= photo.title %>
+  <% photo.images.each do |image| %>
+    <%= image_tag(image.url, size: "100x100") %>
+  <% end %>
+<% end %>
+    
