@@ -2,6 +2,9 @@
     <%= link_to "Our Cars", root_path, class: "navbar-brand" %>
    
     <ul class="navbar-nav ml-auto">
+      <%= link_to photos_path, class: "nav-link" do %>
+        <i class="far fa-images"></i> Gallery
+      <% end %>
 <% if !user_signed_in? %>
       <%= link_to user_session_path, class: "nav-link" do %>
         <i class="fas fa-sign-in-alt"></i> Login

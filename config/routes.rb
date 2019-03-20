@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   
+  get 'photos/new'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
   root to: "pages#index"
   
   resources :posts
+  resources :photos
   resources :profile
   
   get '/profile_info', to: "profile#profile_info", as: "profile_info"
