@@ -95,6 +95,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.8.0)
     execjs (2.7.0)
+    fancybox2-rails (0.2.7)
+      railties (>= 3.1.0)
     ffi (1.9.25)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
@@ -272,6 +274,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
+  fancybox2-rails
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.5)
   jquery-rails
