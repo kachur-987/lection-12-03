@@ -10,6 +10,13 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
   
+  def show
+    @photo = Photo.find(params[:id])
+    respond_to do |format|
+       format.js
+     end
+  end
+  
   def create
     @photo = current_user.photos.build(photo_params)
     if @photo.save

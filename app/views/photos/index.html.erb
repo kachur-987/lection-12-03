@@ -1,8 +1,15 @@
-<% @photos.each do |photo| %>
-  Category: <%= photo.category.title %>
-  Title: <%= photo.title %>
-  <% photo.images.each do |image| %>
-    <%= image_tag(image.url, size: "100x100") %>
-  <% end %>
-<% end %>
+<div class="row">
+  <div class="col-sm-12">
+    <% @photos.each do |photo| %>
+      <p>
+        <%= link_to image_tag(photo.images[0].url, size: "200x200", class: "img-thumbnail"), photo_path(photo.id), remote: true %>
+      </p>
+      Category: <%= photo.category.title %><br />
+      Title: <%= photo.title %><br />
+      Author: <%= photo.user.profile.nickname %>
+    <% end %>
+  </div>
+</div>
+
+<div id="show-photo"></div>
     
