@@ -1,0 +1,14 @@
+uk:
+  activerecord:
+    models:
+      post:
+      profile:
+    attributes:
+      post:
+        title: "Заголовок"
+        body: "Опис"
+      profile:
+        nickname: "Ім'я"
+        country: "Країна"
+        avatar: "Фото"
+     
