@@ -3,7 +3,7 @@
    
     <ul class="navbar-nav ml-auto">
       <%= link_to photos_path, class: "nav-link" do %>
-        <i class="far fa-images"></i> Gallery
+        <i class="far fa-images"></i> <%= t('gallery') %>
       <% end %>
 <% if !user_signed_in? %>
       <%= link_to user_session_path, class: "nav-link" do %>
@@ -12,16 +12,23 @@
 <% else %>
       <% if current_user.profile.nil? %>
         <%= link_to new_profile_path, class: "nav-link" do %>
-          <i class="fas fa-user"></i> Profile
+          <i class="fas fa-user"></i> <%= t('profile') %>
         <% end %>
       <% else %>
           <%= link_to profile_index_path, class: "nav-link" do %>
-          <i class="fas fa-user"></i> Profile
+          <i class="fas fa-user"></i> <%= t('profile') %>
         <% end %>
       <% end %>
       <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>
-        <i class="fas fa-sign-out-alt"></i> Logout
+        <i class="fas fa-sign-out-alt"></i> <%= t('logout') %>
       <% end %>
 <% end %>
     </ul>
+    <li class="nav-lang is-first text-sm-center">
+      <% if I18n.locale == :uk %>           
+        <%= link_to 'EN', {locale: :en}, {class: 'btn btn-main-ghost'} %>
+      <% else %>
+        <%= link_to 'UA', {locale: :uk}, {class: 'btn btn-main-ghost'} %>            
+      <% end %>
+    </li>
 </nav>
